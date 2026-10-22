@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speakwell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Speakwell</h1>
+      <p>Upload a recording of you speaking English. Get a transcript, what you did well, what to fix, and how to improve.</p>
+    </header>
+
+    <section id="upload-section">
+      <label id="dropzone" for="audio-input">
+        <span id="dropzone-text">Choose an audio file or drop it here</span>
+        <span class="hint">mp3, wav, m4a, ogg, flac, webm. Up to 20 MB.</span>
+        <input type="file" id="audio-input" accept="audio/*" hidden>
+      </label>
+      <audio id="preview" controls hidden></audio>
+      <button id="analyze-btn" disabled>Analyze my speaking</button>
+      <p id="status" role="status"></p>
+    </section>
+
+    <section id="results" hidden>
+      <p id="summary"></p>
+
+      <div class="stats" id="stats"></div>
+
+      <h2>Transcript</h2>
+      <p id="transcript" class="transcript"></p>
+
+      <div class="columns">
+        <div class="col good">
+          <h2>Strong points</h2>
+          <ul id="strengths"></ul>
+        </div>
+        <div class="col weak">
+          <h2>Weak points</h2>
+          <ul id="weaknesses"></ul>
+        </div>
+      </div>
+
+      <h2>How to improve</h2>
+      <ol id="tips"></ol>
+
+      <button id="again-btn" class="secondary">Analyze another recording</button>
+    </section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
