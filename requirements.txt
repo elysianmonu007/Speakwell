@@ -1,10 +1,4 @@
-<<<<<<< HEAD
-flask
-python-dotenv
-google-genai
-=======
 flask
 python-dotenv
 google-genai
 gunicorn
->>>>>>> origin/main

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import json
 import os
 import re
@@ -125,7 +125,6 @@ def too_large(_):
 
 
 if __name__ == "__main__":
-=======
 import json
 import os
 import re
@@ -252,5 +251,4 @@ def too_large(_):
 
 
 if __name__ == "__main__":
->>>>>>> origin/main
     app.run(debug=True)
