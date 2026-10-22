@@ -1,10 +1,10 @@
-
+﻿
 import json
 import os
 import re
 
 from dotenv import load_dotenv
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, render_template, request, send_from_directory
 from google import genai
 from google.genai import types
 
@@ -62,6 +62,11 @@ def count_fillers(transcript):
 
     return counts
 
+
+
+@app.route("/google00e84567ce765593.html")
+def google_verification():
+    return send_from_directory(BASE_DIR, "google00e84567ce765593.html")
 
 @app.route("/")
 def home():
@@ -160,3 +165,4 @@ def too_large(_):
 if __name__ == "__main__":
     print("Gemini API key loaded:", bool(API_KEY))
     app.run(debug=True)
+
